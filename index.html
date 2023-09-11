@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+  
+  <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+  <section class="intro-content" id="intro">
+    <h1 class="title">rock paper scissors</h1>
+    <button class="play-button" id="btn">play</button>
+  </section>
+
+  <main class="game-container" id="game">
+    <div class="img-container">
+      <img class="boss-img" id="boss" src="images/bully2.png" alt="">
+      <p class="speech box" id="one">hey you're suppose to be working!!!!</p>
+      <p class="speech box2" id="two">rock, paper, scissors first to 5, otherwise....you're fired!!!</p>
+      <div class="game-buttons-container">
+        <button class="move" id="rock-button">
+          <img src="images/rock.svg" alt="">
+        </button>
+        <button class="move" id="paper-button">
+          <img src="images/paper.svg" alt="">
+        </button>
+        <button class="move" id="scissor-button">
+          <img src="images/scissor.svg" alt="">
+        </button>
+      </div>
+    </div>
+    
+    <div class="container-of-score-cards">
+      <div class="card-container">
+        <h1 class="player-title" id="boss">boss</h1>
+        <span class="score" id="boss-score">0</span>
+      </div>
+
+      <div class="card-container">
+        <h1 class="player-title" id="player">player</h1>
+        <span class="score" id="player-score">0</span>
+      </div>
+      
+      
+    </div>
+
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
