@@ -240,10 +240,7 @@ body {
 
 
 @media only screen and (max-width: 414px) {
-  body {
-    display: block;
-    overflow: hidden;
-  }
+  
 
   .play-button {
     margin-top: 2rem;
@@ -299,7 +296,8 @@ body {
   }
 
   .game-buttons-container {
-    margin-top: 11rem;
+    margin-top: 9rem;
+    gap: 1rem;
   }
 
   .container-of-score-cards {
