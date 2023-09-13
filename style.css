@@ -240,6 +240,11 @@ body {
 
 
 @media only screen and (max-width: 414px) {
+  body {
+    display: block;
+    overflow: hidden;
+  }
+
   .play-button {
     margin-top: 2rem;
   }
