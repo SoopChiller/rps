@@ -9,14 +9,10 @@ const button = document.getElementById("btn").addEventListener("click",() => {
 
   setTimeout(() => {
     getPlayerSelection();
-  })
+  }, 8000)
   
   
 });
-
-
-
-
 
 function getComputerSelection() {
   let computerSelection = getRandomInt(0, 2);
@@ -29,7 +25,6 @@ function getComputerSelection() {
    };
    return computerSelection;
  };
-
 
  function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min); 
@@ -74,33 +69,25 @@ function tieSpeech() {
   `);
 }
 
-
 function loseSpeech(player,computer) {
   const lose = document.getElementById("two");
 
   lose.insertAdjacentHTML("afterend", `
   <p class="speech box3" id="three">
-    i chose ${computer} and you chose ${player}...loser!!!
+  you chose ${player} and i chose ${computer}...you lose! hahahaha!!!!
   <p>
   `);
 }
-
-
-
-
-
 
 function winSpeech(player,computer) {
   const win = document.getElementById("two");
 
   win.insertAdjacentHTML("afterend", `
   <p class="speech box4" id="three">
-    i chose ${computer} and you chose ${player}...you win!!!
-    ARRRRRRG!!!! 
-  <p>
+   you chose ${player} and i chose ${computer}...you win arrrrrg!!!! 
+  </p>
   `);
 }
-
 
 function play(playerChoice ,computerChoice) {
 
