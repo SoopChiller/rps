@@ -14,31 +14,8 @@ const button = document.getElementById("btn").addEventListener("click",() => {
   
 });
 
-function getWinSpeech() {
-  let speechSelection = getRandomInt(0, 2);
 
-  if(speechSelection === 0) {
-    speechSelection = winSpeech;
-  } else if(speechSelection === 1) {
-    speechSelection = winSpeech2;
-  } else {
-    speechSelection = winSpeech3;
-  };
-  return speechSelection();
-}
 
-function getLoseSpeech() {
-  let speechSelection = getRandomInt(0, 2);
-
-  if(speechSelection === 0) {
-    speechSelection = loseSpeech;
-  } else if(speechSelection === 1) {
-    speechSelection = loseSpeech2;
-  } else {
-    speechSelection = loseSpeech3;
-  };
-  return speechSelection();
-}
 
 
 function getComputerSelection() {
@@ -79,9 +56,6 @@ function incrementBoss() {
   bossScore += 1;
   localStorage.setItem("boss-score", bossScore);
   document.getElementById('boss-score').innerHTML = bossScore;
-
-  
-  
 };
 
 function incrementPlayer() {
@@ -93,7 +67,6 @@ function incrementPlayer() {
 
 function tieSpeech() {
   const tie = document.getElementById("two");
-
   tie.insertAdjacentHTML("afterend", `
   <p class="speech box3" id="three">
     tie! play again!
@@ -102,69 +75,31 @@ function tieSpeech() {
 }
 
 
-function loseSpeech() {
+function loseSpeech(player,computer) {
   const lose = document.getElementById("two");
 
   lose.insertAdjacentHTML("afterend", `
   <p class="speech box3" id="three">
-    loser!!! hahahahaha!!!
+    i chose ${computer} and you chose ${player}...loser!!!
   <p>
   `);
 }
 
-function loseSpeech2() {
-  const lose = document.getElementById("two");
-
-  lose.insertAdjacentHTML("afterend", `
-  <p class="speech box3" id="three">
-    you'll never beat me!!! Bwahahaha!
-  <p>
-  `)
-}
 
 
-function loseSpeech3() {
-  const lose = document.getElementById("two");
 
-  lose.insertAdjacentHTML("afterend", `
-  <p class="speech box3" id="three">
-    is that all you got!?!?!? you lose!
-  <p>
-  `)
-}
 
-function winSpeech() {
+
+function winSpeech(player,computer) {
   const win = document.getElementById("two");
 
   win.insertAdjacentHTML("afterend", `
   <p class="speech box4" id="three">
-    arrrrgggghhh!!! winner!!!
+    i chose ${computer} and you chose ${player}...you win!!!
+    ARRRRRRG!!!! 
   <p>
   `);
 }
-
-
-function winSpeech2() {
-  const win = document.getElementById("two");
-
-  win.insertAdjacentHTML("afterend", `
-  <p class="speech box4" id="three">
-    you win!!! grrrrr!!!
-  <p>
-  `);
-}
-
-
-function winSpeech3() {
-  const win = document.getElementById("two");
-
-  win.insertAdjacentHTML("afterend", `
-  <p class="speech box4" id="three">
-    noooo!! you win!!
-  <p>
-  `);
-}
-
 
 
 function play(playerChoice ,computerChoice) {
@@ -185,10 +120,10 @@ function play(playerChoice ,computerChoice) {
     tieSpeech();
   } else if (outcomes[playerChoice].win === computerChoice) {
     incrementPlayer();
-    getWinSpeech();
+    winSpeech(playerChoice, computerChoice);
   } else {
     incrementBoss();
-    getLoseSpeech();
+    loseSpeech(playerChoice, computerChoice)
   };
 
   console.log(playerChoice, computerChoice)
