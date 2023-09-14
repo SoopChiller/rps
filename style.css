@@ -110,33 +110,6 @@ body {
 }
 
 
-#one {
-  -webkit-animation: 3s ease 0s normal forwards 1 fadeinout;
-  animation: 3s ease 0s normal forwards 1 fadeinout;
-  opacity: 0;
-}
-
-#two {
-  -webkit-animation: 3s ease 0s normal forwards 1 fadeinout;
-  animation: 5s ease 0s normal forwards 1 fadeinout;
-  opacity: 0;
-  animation-delay: 4s;
-}
-
-#three {
-  -webkit-animation: 3s ease 0s normal forwards 1 fadeinout;
-  animation: 3.5s ease 0s normal forwards 1 fadeinout;
-  opacity: 0;
-}
-
-@-webkit-keyframes fadeinout {
-  50% { opacity: 1; }
-}
-
-@keyframes fadeinout {
-  50% { opacity: 1; }
-}
-
 .box2,
 .box3 {
   left: -16rem;
@@ -296,7 +269,7 @@ body {
   }
 
   .game-buttons-container {
-    margin-top: 10rem;
+    margin-top: 11rem;
     gap: 1rem;
   }
 

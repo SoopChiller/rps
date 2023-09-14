@@ -3,16 +3,37 @@ window.onload = () => {
 };
 
 const button = document.getElementById("btn").addEventListener("click",() => {
-  document.getElementById("intro").style.display = "none"
-  document.getElementById("game").style.display = "flex"
-  
+  let intro = document.getElementById("intro").style.display = "none"
+  let game = document.getElementById("game").style.display = "flex"
+  let one = document.getElementById("one")
+  let two = document.getElementById("two").style.display = "none";
 
   setTimeout(() => {
     getPlayerSelection();
-  }, 8000)
+  }, 5000)
+
+ setTimeout(() => {
+  one.style.display = "none";
   
+ }, 5000)
+
+
+
   
 });
+
+
+function loseGame() {
+  const lose = document.getElementById("two");
+  lose.insertAdjacentHTML("afterend", `
+  <p class="speech box3" id="three">
+    you lose! you're fired!!!!!!!
+  <p>
+  <button>
+    play again?
+  </button>
+  `);
+}
 
 function getComputerSelection() {
   let computerSelection = getRandomInt(0, 2);
@@ -64,9 +85,13 @@ function tieSpeech() {
   const tie = document.getElementById("two");
   tie.insertAdjacentHTML("afterend", `
   <p class="speech box3" id="three">
-    tie! play again!
+    tie!...play again!...and quit copying me!!!!
   <p>
   `);
+
+  setTimeout(() => {
+   document.getElementById("three").style.display = "none";
+  }, 2000)
 }
 
 function loseSpeech(player,computer) {
@@ -77,6 +102,10 @@ function loseSpeech(player,computer) {
   you chose ${player} and i chose ${computer}...you lose! hahahaha!!!!
   <p>
   `);
+
+  setTimeout(() => {
+    document.getElementById("three").style.display = "none";
+   }, 3000)
 }
 
 function winSpeech(player,computer) {
@@ -87,6 +116,11 @@ function winSpeech(player,computer) {
    you chose ${player} and i chose ${computer}...you win arrrrrg!!!! 
   </p>
   `);
+
+
+  setTimeout(() => {
+    document.getElementById("three").style.display = "none";
+   }, 3000)
 }
 
 function play(playerChoice ,computerChoice) {
